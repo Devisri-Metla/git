@@ -1,0 +1,28 @@
+Here’s a list of common Git commands and what they do:
+
+### Basic Git Commands:
+1. **`git init`** – Initialize a new Git repository.
+2. **`git clone <repository_url>`** – Clone an existing repository from a URL.
+3. **`git add <file>`** – Stage a file for commit.
+4. **`git commit -m "<message>"`** – Commit changes with a descriptive message.
+5. **`git status`** – Check the status of changes in your working directory.
+6. **`git push`** – Push your commits to a remote repository.
+7. **`git pull`** – Fetch and merge changes from the remote repository.
+8. **`git fetch`** – Download changes from the remote but don’t apply them to your local branch.
+9. **`git log`** – Show the commit history.
+10. **`git diff`** – Show changes between commits or the working directory and the index.
+11. **`git checkout <branch>`** – Switch to another branch.
+12. **`git branch`** – List branches or create a new branch (`git branch <branch_name>`).
+13. **`git merge <branch>`** – Merge another branch into your current branch.
+
+### Advanced Git Commands:
+1. **`git rebase <branch>`** – Apply changes from one branch onto another (use with caution).
+2. **`git reset <file>`** – Unstage a file that’s been added.
+3. **`git revert <commit_id>`** – Create a new commit that undoes the changes from a previous commit.
+4. **`git cherry-pick <commit_id>`** – Apply the changes from a specific commit.
+5. **`git stash`** – Temporarily save changes to avoid committing them.
+6. **`git stash pop`** – Apply stashed changes back to the working directory.
+7. **`git tag <tag_name>`** – Create a new tag for a commit.
+8. **`git remote -v`** – Show the URLs of the remote repositories.
+
+These commands should cover most tasks you'll need when using Git for version control. Let me know if you'd like more details on any of them!
