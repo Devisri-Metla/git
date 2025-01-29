@@ -26,3 +26,57 @@ Here’s a list of common Git commands and what they do:
 8. **`git remote -v`** – Show the URLs of the remote repositories.
 
 These commands should cover most tasks you'll need when using Git for version control. Let me know if you'd like more details on any of them!
+Sure! Here’s how `git reset` and `git revert` work, with examples:
+
+### `git reset`
+`git reset` is used to **undo changes** by moving the HEAD (the current commit pointer) to a previous commit. There are different types of `git reset`, such as:
+
+- **Soft Reset**: Moves HEAD, but keeps the changes in the working directory.
+- **Mixed Reset**: Moves HEAD and unstages the changes (default).
+- **Hard Reset**: Moves HEAD and discards changes in the working directory.
+
+#### Example 1: Soft Reset
+Let’s say you made a commit, but you want to undo it and move the changes back to your staging area.
+
+1. First, you make a commit:
+   ```bash
+   git commit -m "First commit"
+   ```
+
+2. Now, you realize you want to undo the commit but keep your changes staged (soft reset):
+   ```bash
+   git reset --soft HEAD~1
+   ```
+   This moves the HEAD pointer to the previous commit (`HEAD~1`) but leaves your changes in the staging area.
+
+#### Example 2: Mixed Reset (default)
+Let’s say you committed, but you want to undo the commit and unstage the changes.
+
+1. First, commit again:
+   ```bash
+   git commit -m "Second commit"
+   ```
+
+2. To unstage the commit but keep the changes in your working directory:
+   ```bash
+   git reset HEAD~1
+   ```
+   This is the same as `git reset --mixed HEAD~1`, which undoes the commit and unstages the changes, leaving them in your working directory.
+
+#### Example 3: Hard Reset
+This will undo the commit and **discard all changes** from both the staging area and working directory.
+
+1. Let’s assume you've made some changes and committed them:
+   ```bash
+   git commit -m "Final commit"
+   ```
+
+2. Now, to completely remove that commit and discard the changes:
+   ```bash
+   git reset --hard HEAD~1
+   ```
+
+   This command will remove the commit and any changes, bringing your project back to the state it was in before that commit.
+
+### `git revert`
+`git revert` is used to **undo a commit by creating a new commit** that reverses the changes of the specified commit. Unlike `git reset`, `git revert` doesn’t alter history—it creates a new commit that undoes previous changes.
